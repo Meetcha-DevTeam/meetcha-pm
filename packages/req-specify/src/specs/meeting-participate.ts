@@ -51,7 +51,7 @@ export const meetingParticipateEnd: Spec = {
   priority: 2,
   scenarios: ["유저가 참여 마감시간이 지난 미팅을 참여 하려한다"],
   design: "페이지",
-  export: [{ id: "page-meeting-detail-1", }],
+  export: [{ id: "page-meeting-detail-1" }],
 };
 
 export const meetingParticipateWrong: Spec = {
@@ -65,13 +65,12 @@ export const meetingParticipateWrong: Spec = {
 };
 
 export const meetingParticipateRewrite: Spec = {
-    ...meetingParticipate,
-    id:'page-meeting-participate-4',
-    name:'미팅 참여 수정',
-    description:'미팅 참여 수정, 미탕 참가랑 ui와 기능 동일, 폼 기본값이 이전 입력정보로 채워짐',
-    priority:2,
-    scenarios:[
-        "사용자는 미팅 참여 수정을 할 수 있다.",
-    ],
-    design:'페이지',
+  ...meetingParticipate,
+  id: "page-meeting-participate-4",
+  name: "미팅 참여 수정",
+  description:
+    "미팅 참여 수정, 미탕 참가랑 ui와 기능 동일, 폼 기본값이 이전 입력정보로 채워짐",
+  priority: 3,
+  scenarios: ["사용자는 미팅 참여 수정을 할 수 있다."],
+  design: "페이지",
 };
