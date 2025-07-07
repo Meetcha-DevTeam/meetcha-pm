@@ -1,20 +1,20 @@
-import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./app.css";
-import type { Spec } from "./types/base";
 import { generateSpec } from "./utils/generateSpec";
+import { SpecContext } from "./hooks/useSpec";
+import { HomePage } from "./pages/home";
+import { SpecPage } from "./pages/spec";
 
 function App() {
-  const [specMap] = useState<Map<string, Spec>>(() => generateSpec());
-
   return (
-    <>
-      {Array.from(specMap.values()).map((spec) => (
-        <div key={spec.id}>
-          <h1>{spec.name}</h1>
-          <p>{spec.description}</p>
-        </div>
-      ))}
-    </>
+    <SpecContext.Provider value={generateSpec()}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/:specId" element={<SpecPage />} />
+        </Routes>
+      </BrowserRouter>
+    </SpecContext.Provider>
   );
 }
 
