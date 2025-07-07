@@ -14,12 +14,12 @@ export const SchedulePage: Spec = {
   ],
   input: ["사용자의 구글 일정 정보"],
   output: ["사용자의 구글 일정에 대한 액션"],
-  children: ["schedule-create"],
+  children: ["sheet-schedule-create"],
   design:"페이지",
 };
 
 export const ScheduleCreate: Spec = {
-  id: "schedule-create",
+  id: "sheet-schedule-create",
   name: "일정 생성",
   description: "사용자는 일정을 생성할 수 있다.",
   priority: 1,
