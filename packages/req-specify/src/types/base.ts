@@ -49,3 +49,4 @@ export interface Spec {
    */
   design?: string;
 }
+export type SpecKey = keyof Spec;
