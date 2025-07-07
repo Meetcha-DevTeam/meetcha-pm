@@ -63,3 +63,15 @@ export const meetingParticipateWrong: Spec = {
   design: "페이지",
   export: [{ id: "page-meeting-participate-1" }],
 };
+
+export const meetingParticipateRewrite: Spec = {
+    ...meetingParticipate,
+    id:'page-meeting-participate-4',
+    name:'미팅 참여 수정',
+    description:'미팅 참여 수정, 미탕 참가랑 ui와 기능 동일, 폼 기본값이 이전 입력정보로 채워짐',
+    priority:2,
+    scenarios:[
+        "사용자는 미팅 참여 수정을 할 수 있다.",
+    ],
+    design:'페이지',
+};
