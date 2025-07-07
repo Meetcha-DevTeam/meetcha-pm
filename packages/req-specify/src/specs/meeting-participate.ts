@@ -33,7 +33,7 @@ export const meetingParticipateInput: Spec = {
   id: "page-meeting-participate-1",
   name: "미팅 참여 링크 입력",
   description: "사용자는 미팅 참여 링크를 입력할 수 있다.",
-  priority: 2,
+  priority: 3,
   scenarios: ["사용자는 미팅 참여 링크를 입력한다."],
   design: "페이지",
   input: [{ name: "미팅 참여 링크", type: "string" }],

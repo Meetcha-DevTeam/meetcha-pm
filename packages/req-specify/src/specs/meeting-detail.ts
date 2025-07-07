@@ -12,7 +12,7 @@ const detailBase: Pick<Required<Spec>, "scenarios" | "input" | "export"> = {
     { name: "상태", type: "Enum('참여중','산출 완료','미팅 종료')" },
   ],
   export:[
-    {id:'page-meeting-participant-list',action:'참여자 목록 확인'}
+    {id:'page-participant-list',action:'참여자 목록 확인'}
   ]
 };
 
@@ -41,11 +41,11 @@ export const meetingDetailCompleted: Spec = {
   export:[...detailBase.export]
 };
 
-export const particiPantList:Spec = {
-    id:'page-meeting-participant-list',
+export const participantList:Spec = {
+    id:'page-participant-list',
     name:'참여자 목록',
     description:'참여자 목록을 확인 가능하다.',
-    priority:3,
+    priority:10,
     scenarios:[
         "참여자는 미팅 제목을 확인 가능하다.",
         "참여자는 참여자 목록을 확인 가능하다.",

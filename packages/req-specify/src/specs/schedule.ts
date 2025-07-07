@@ -23,7 +23,7 @@ export const ScheduleCreate: Spec = {
   name: "일정 생성",
   description: "사용자는 일정을 생성할 수 있다.",
   priority: 1,
-  scenarios: ["사용자는 일정 생성 버튼을 누르거나 빈 곳을 누르면 일정 생성"],
+  scenarios: ["사용자는 빈 곳을 누르면 일정 생성"],
   design: "바텀 시트 (modal-mode)",
   output: [
     { name: "이름", type: "string" },
