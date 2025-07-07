@@ -14,7 +14,7 @@ export const meetingList: Spec = {
   input: [{ name: "미팅 목록", type: "Array<미팅>" }],
   export: [
     { id: "page-meeting-participate-4", action: "참여 마감 이전 항목 클릭" },
-    { id: "page-meeting-detail-0", action: "항목 클릭" },
     { id: "page-meeting-detail-1", action: "항목 클릭" },
+    { id: "page-alter-time-vote", action: "항목 클릭" },
   ],
 };

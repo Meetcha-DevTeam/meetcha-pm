@@ -5,3 +5,4 @@ export * from "./project";
 export * from "./schedule";
 export * from "./bottom-nav";
 export * from "./meeting-list";
+export * from "./alter-time-vote";
