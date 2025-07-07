@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useSpec } from "../hooks/useSpec";
 
 export const HomePage = () => {
-  const specMap = useSpec();
+  const {specMap} = useSpec();
   return (
     <div>
       {Array.from(specMap.values()).map((spec) => (

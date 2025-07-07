@@ -3,10 +3,10 @@ import { useSpec } from "../hooks/useSpec";
 
 export const SpecPage = () => {
   const { specId } = useParams();
-  const specMap = useSpec();
+  const {specMap} = useSpec();
 
   const spec = specId ? specMap.get(specId) : null;
-  
+
   if (!spec) return <div>이런!</div>;
   return (
     <div>

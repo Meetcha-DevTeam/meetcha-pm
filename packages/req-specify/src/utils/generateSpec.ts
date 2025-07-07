@@ -26,9 +26,12 @@ const validateSpecChildren = (specMap: Map<string, Spec>) => {
     }
   });
 };
+
 export const generateSpec = () => {
-  // TODO: parent와 import 로직 추가
   const specMap = new Map<string, Spec>();
+  const parentMap = new Map<string, string | null>();
+  const importMap = new Map<string, string[]>();
+
   Object.values(specs).forEach((spec) => {
     if (specMap.has(spec.id)) {
       throw new Error(
@@ -37,11 +40,22 @@ export const generateSpec = () => {
         } 확인`
       );
     }
+
     specMap.set(spec.id, spec);
+    if (spec.children) {
+      spec.children.forEach((child) => {
+        parentMap.set(child, spec.id);
+      });
+    }
+    if (spec.export) {
+      spec.export.forEach((edge) => {
+        importMap.set(edge.id, [...(importMap.get(edge.id) || []), spec.id]);
+      });
+    }
   });
 
   validateSpecExport(specMap);
   validateSpecChildren(specMap);
 
-  return specMap;
+  return { specMap, parentMap, importMap };
 };
