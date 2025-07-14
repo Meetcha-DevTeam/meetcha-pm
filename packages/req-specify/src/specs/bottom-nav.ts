@@ -33,6 +33,7 @@ export const floatingButton: Spec = {
     { id: "sheet-schedule-create" },
     { id: "page-meeting-create" },
     { id: "page-meeting-participate-1" },
+    { id: "page-feel-list" },
   ],
   design:"버튼, 리스트",
 };

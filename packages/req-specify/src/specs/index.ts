@@ -6,3 +6,4 @@ export * from "./schedule";
 export * from "./bottom-nav";
 export * from "./meeting-list";
 export * from "./alter-time-vote";
+export * from "./feel-list";
