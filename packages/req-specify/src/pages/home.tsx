@@ -6,6 +6,8 @@ import type { SortByType } from "../components/SortControls";
 import { SearchControls, SearchField } from "../components/SearchControls";
 import type { SearchFieldType } from "../components/SearchControls";
 import { SpecTable } from "../components/SpecTable";
+import { ViewTabs, ViewMode, type ViewModeType } from "../components/ViewTabs";
+import { SpecGraph } from "../components/SpecGraph";
 
 export const HomePage = () => {
   const { specMap } = useSpec();
@@ -15,6 +17,7 @@ export const HomePage = () => {
   const [searchField, setSearchField] = useState<SearchFieldType>(
     SearchField.id
   );
+  const [viewMode, setViewMode] = useState<ViewModeType>(ViewMode.LIST);
 
   const specs = useMemo(() => {
     let specsArray = Array.from(specMap.values());
@@ -65,13 +68,21 @@ export const HomePage = () => {
         <h1 className="text-3xl font-bold text-gray-900 mb-2">
           요구사항 명세서
         </h1>
-        <SearchControls
-          searchTerm={searchTerm}
-          searchField={searchField}
-          onSearchChange={handleSearchChange}
-        />
-        <SortControls sortBy={sortBy} onSortChange={setSortBy} />
-        <SpecTable specs={specs} onRowClick={handleRowClick} />
+        <ViewTabs currentMode={viewMode} onModeChange={setViewMode} />
+        
+        {viewMode === ViewMode.LIST ? (
+          <>
+            <SearchControls
+              searchTerm={searchTerm}
+              searchField={searchField}
+              onSearchChange={handleSearchChange}
+            />
+            <SortControls sortBy={sortBy} onSortChange={setSortBy} />
+            <SpecTable specs={specs} onRowClick={handleRowClick} />
+          </>
+        ) : (
+          <SpecGraph specs={specs} onNodeClick={handleRowClick} />
+        )}
       </div>
     </div>
   );
