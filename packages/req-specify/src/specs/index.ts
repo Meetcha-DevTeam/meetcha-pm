@@ -8,3 +8,4 @@ export * from "./meeting-list";
 export * from "./alter-time-vote";
 export * from "./feel-list";
 export * from "./feel-create";
+export * from "./feel-detail";

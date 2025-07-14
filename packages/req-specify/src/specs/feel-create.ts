@@ -21,4 +21,5 @@ export const feelCreate: Spec = {
     { name: "할 일", type: "string" },
     { name: "프로젝트", type: "project" },
   ],
+  export: [{ id: "page-feel-detail", action: "느낀점 작성 성공" }],
 };

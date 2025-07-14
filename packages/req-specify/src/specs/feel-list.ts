@@ -22,5 +22,8 @@ export const feelList: Spec = {
     "느낀점 작성안한 미팅 제목, 시작 시간",
     "느낀점 작성완료한 미팅 제목, 프로젝트, 느낀점, 역할, 기여도",
   ],
-  export: [{ id: "page-feel-create", action: "느낀점 미작성 목록 항목" }],
+  export: [
+    { id: "page-feel-create", action: "느낀점 미작성 목록 항목 클릭" },
+    { id: "page-feel-detail", action: "느낀점 작성완료 목록 항목 클릭" },
+  ],
 };
