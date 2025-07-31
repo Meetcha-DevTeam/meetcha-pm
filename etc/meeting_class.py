@@ -11,12 +11,30 @@ class TimeRange:
 
 
 class Participant:
+    """
+    편의상 만든 클래스로, 실제 참여자 데이터와 다름에 주의
+
+    id: 참여자 고유 번호
+    timeRanges: 미팅 참여시 기입한 참여자 가능 시간 범위들
+    """
     def __init__(self, id: str, timeRanges: list[TimeRange]):
         self.id = id
         self.timeRanges = timeRanges
 
 
 class Meeting:
+    """
+        편의상 만든 클래스로, 실제 미팅 데이터와 다름에 주의
+
+        id: 미팅 고유 번호
+        participants: 참가자들
+        deadline: 미팅 마감 시간
+        duration: 미팅 진행 시간
+        meetingTime: 산출 미팅 시간
+        alternativeTime: 산출 대체 시간
+        alternativeCandidates: 대체 시간 후보들
+        alternativeDeadline: 대체 시간 마감 시간
+    """
     def __init__(
         self,
         id: str,
@@ -26,16 +44,9 @@ class Meeting:
         meetingTime: int | None,
         alternativeTime: int | None,
         alternativeCandidates: list[int],
+        alternativeDeadline: int,
+        candidateDay: list[int],
     ):
-        """
-        id: 미팅 고유 번호
-        participants: 참가자들
-        deadline: 미팅 마감 시간
-        duration: 미팅 진행 시간
-        meetingTime: 산출 미팅 시간
-        alternativeTime: 산출 대체 시간
-        alternativeCandidates: 대체 시간 후보들
-        """
         self.id = id
         self.participants = participants
         self.deadline = deadline
@@ -43,4 +54,6 @@ class Meeting:
         self.meetingTime = meetingTime
         self.alternativeTime = alternativeTime
         self.alternativeCandidates = alternativeCandidates
+        self.alternativeDeadline = alternativeDeadline
+        self.candidateDay = candidateDay
 
